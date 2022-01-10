@@ -7,8 +7,7 @@ public class Klient extends Osoba{
     private ArrayList<Rezerwacja> historiaWypozyczen;
     private Rezerwacja rezerwacja;
 
-    public Klient(BufferedImage skanPrawajazdy, BufferedImage skanDowodu) {
-        this.skanPrawajazdy = skanPrawajazdy;
-        this.skanDowodu = skanDowodu;
+    public Klient(String login, String haslo, String imie, String nazwisko, String numerTelefonu, String email) {
+        super(login, haslo, imie, nazwisko, numerTelefonu, email);
     }
 }
