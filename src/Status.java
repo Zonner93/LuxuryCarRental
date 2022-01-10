@@ -4,5 +4,4 @@ public enum Status {
     wTrakcieRealizacji,
     zrealizowana,
     anulowana
-
 }

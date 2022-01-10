@@ -7,5 +7,4 @@ public enum Marka {
     Mercedes,
     BMW,
     Audi
-
 }
