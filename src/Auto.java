@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Auto {
-    private float cenaZaDobe;
+    private float cenaZaDobe = 0.0f;
     private ArrayList<LocalDateTime> terminyRezerwacji;
     private Marka marka;
     private String model;
     private HashMap<String, String> daneTeczhniczne;
     private ArrayList<BufferedImage> zdjecia;
-    private boolean czyUszkodzone;
+    private boolean czyUszkodzone = false;
     private String numerRejestracyjny;
 
     public Auto(Marka marka, String model, HashMap<String, String> daneTeczniczne) {
