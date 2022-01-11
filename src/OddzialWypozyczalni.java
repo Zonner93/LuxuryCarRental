@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 @Getter @Setter
 public class OddzialWypozyczalni {
+    private final Integer id;
     private String nazwa;
     private String adres;
     private String numerTelefonu;
@@ -16,8 +17,9 @@ public class OddzialWypozyczalni {
     private ArrayList<Auto> listaAut;
 
 
-    public OddzialWypozyczalni(String nazwa, String adres, String numerTelefonu, String email,
+    public OddzialWypozyczalni(Integer id, String nazwa, String adres, String numerTelefonu, String email,
                                LocalTime godzinaOtwarcia, LocalTime godzinaZamkniecia) {
+        this.id = id;
         this.nazwa = nazwa;
         this.adres = adres;
         this.numerTelefonu = numerTelefonu;
