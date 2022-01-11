@@ -12,6 +12,7 @@ public abstract class Auto {
     private ArrayList<BufferedImage> zdjecia;
     private boolean czyUszkodzone = false;
     private String numerRejestracyjny;
+    private ArrayList<Rezerwacja> historiaRezerwacji;
 
     public Auto(Marka marka, String model, HashMap<String, String> daneTeczniczne) {
         this.marka = marka;
@@ -29,5 +30,6 @@ public abstract class Auto {
     public void wyswietlFormularzDoKiedyAutoNiedostepne() {}
     public Auto znajdAuto(String numerRejestracyjny) {}
     public boolean czyAutoUszkodzone() {}
+    public void dodajRezerwacjeDoHistorii(Rezerwacja rezerwacja) {}
 
 }
