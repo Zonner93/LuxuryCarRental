@@ -5,6 +5,7 @@ public class AutoElektryczne extends Auto{
 
     public AutoElektryczne(Marka marka, String model, HashMap<String, String> daneTeczniczne,
                            String maxKmNaJednymLadowaniu) {
+
         super(marka, model, daneTeczniczne);
         this.maxKmNaJednymLadowaniu = maxKmNaJednymLadowaniu;
     }

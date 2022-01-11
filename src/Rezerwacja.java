@@ -11,10 +11,13 @@ public class Rezerwacja {
     private LocalDateTime dataZakonczenia;
     private float calokowitaWartoscRezerwacji;
     private PracownikOddzialu pracownikOddzialu;
+    private Auto auto;
+
 
     public Rezerwacja(LocalDateTime dataZlozenia, Status status, LocalDateTime ostatecznyTerminOplaceniaWCalosci,
                       float pozostalaKwotaDoOplacenia, LocalDateTime dataRozpoczecia, LocalDateTime dataZakonczenia,
                       float calokowitaWartoscRezerwacji, Auto auto) {
+
         this.dataZlozenia = dataZlozenia;
         this.status = status;
         this.ostatecznyTerminOplaceniaWCalosci = ostatecznyTerminOplaceniaWCalosci;
@@ -25,10 +28,8 @@ public class Rezerwacja {
         this.auto = auto;
     }
 
-    private Auto auto;
-
     public void zlozRezerwacje() {}
-    public boolean sprawdzDostepnoscAuta() {}
+    public boolean sprawdzDostepnoscAuta(Auto auto) {}
     public void przyznajRabat() {}
     public float obliczKosztRezerwacji() {}
     public void oplacCalosc() {}

@@ -8,6 +8,7 @@ public class Klient extends Osoba{
 
     public Klient(String login, String haslo, String imie, String nazwisko, String numerTelefonu, String email,
                   BufferedImage skanPrawajazdy, BufferedImage skanDowodu) {
+
         super(login, haslo, imie, nazwisko, numerTelefonu, email);
         this.skanPrawajazdy = skanPrawajazdy;
         this.skanDowodu = skanDowodu;
