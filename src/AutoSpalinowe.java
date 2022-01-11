@@ -1,5 +1,9 @@
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.HashMap;
 
+@Getter @Setter
 public class AutoSpalinowe extends Auto{
     private String srednieSpalanie;
     private String pojemnoscBaku;

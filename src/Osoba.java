@@ -1,3 +1,7 @@
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 public abstract class Osoba {
     private String login;
     private String haslo;

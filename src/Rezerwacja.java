@@ -1,6 +1,10 @@
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+@Getter @Setter
 public class Rezerwacja {
     public int MINIMALNA_ILOSC_DNI_DO_RABATU = 7;
     private LocalDateTime dataZlozenia;
@@ -29,23 +33,23 @@ public class Rezerwacja {
     }
 
     public void zlozRezerwacje() {}
-    public boolean sprawdzDostepnoscAuta(Auto auto) {}
+//    public boolean sprawdzDostepnoscAuta(Auto auto) {}
     public void przyznajRabat() {}
-    public float obliczKosztRezerwacji() {}
+//    public float obliczKosztRezerwacji() {}
     public void oplacCalosc() {}
     public void anulujRezerwacje() {}
-    public void przydzielDoRealizacji(PracownikOddzialu) {}
+    public void przydzielDoRealizacji(PracownikOddzialu pracownikOddzialu) {}
     public void wyswietlInformacjeORezerwacji() {}
     public void zmianaStatusuRezerwacji() {}
-    public ArrayList<Auto> utworzListeWypozyczonychAut() {}
-    public ArrayList<Auto> utworzListeWyporzyczonychAut() {}
+//    public ArrayList<Auto> utworzListeWypozyczonychAut() {}
+//    public ArrayList<Auto> utworzListeWyporzyczonychAut() {}
     public void anulujNieoplaconeRezerwacje() {}
     public void wyswietlFormularzRezerwacji() {}
-    public boolean czyWymaganeOplacenieWCalosci() {}
+//    public boolean czyWymaganeOplacenieWCalosci() {}
     public void oplacZaliczke() {}
-    public Rezerwacja znajdzRezerwacje() {}
-    public ArrayList<LocalDateTime> wyswietlDostepneTerminyDlaAuta() {}
-    public ArrayList<Auto> wyswietlDostepneAutaWDanymTerminie() {}
+//    public Rezerwacja znajdzRezerwacje() {}
+//    public ArrayList<LocalDateTime> wyswietlDostepneTerminyDlaAuta() {}
+//    public ArrayList<Auto> wyswietlDostepneAutaWDanymTerminie() {}
     public void wyswietlPodsumowanie() {}
     public void informujODokonaniuRezerwwacji() {}
     public void zwrotAuta(Auto auto) {}

@@ -1,5 +1,5 @@
 public class SzczegolyRezerwacji {
-    private String adresPodstawieniaIOdbioru = null;
+    private String adresPodstawieniaIOdbioru;
     private boolean czyDekoracjaSlubna = false;
 
     public void setAdresPodstawieniaIOdbioru(String adresPodstawieniaIOdbioru) {

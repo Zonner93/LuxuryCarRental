@@ -1,8 +1,12 @@
+import lombok.Getter;
+import lombok.Setter;
+
 import java.awt.image.BufferedImage;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@Getter @Setter
 public abstract class Auto {
     private float cenaZaDobe = 0.0f;
     private ArrayList<LocalDateTime> terminyRezerwacji;
@@ -28,8 +32,8 @@ public abstract class Auto {
     public void zablokujMozliwoscRezerwacji(boolean czyUszkodzone, Auto auto) {}
     public void odblokujMozliwoscRezerwacji(boolean czyUszkodzone, Auto auto) {}
     public void wyswietlFormularzDoKiedyAutoNiedostepne() {}
-    public Auto znajdAuto(String numerRejestracyjny) {}
-    public boolean czyAutoUszkodzone() {}
+//    public Auto znajdAuto(String numerRejestracyjny) {}
+//    public boolean czyAutoUszkodzone() {}
     public void dodajRezerwacjeDoHistorii(Rezerwacja rezerwacja) {}
 
 }
