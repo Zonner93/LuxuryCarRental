@@ -12,7 +12,8 @@ public class OddzialWypozyczalni {
     private ArrayList<Auto> listaAut;
 
 
-    public OddzialWypozyczalni(String nazwa, String adres, String numerTelefonu, String email, LocalTime godzinaOtwarcia, LocalTime godzinaZamkniecia) {
+    public OddzialWypozyczalni(String nazwa, String adres, String numerTelefonu, String email,
+                               LocalTime godzinaOtwarcia, LocalTime godzinaZamkniecia) {
         this.nazwa = nazwa;
         this.adres = adres;
         this.numerTelefonu = numerTelefonu;
