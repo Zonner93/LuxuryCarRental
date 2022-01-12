@@ -2,11 +2,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 @Getter @Setter
 public class Rezerwacja {
-    public int MINIMALNA_ILOSC_DNI_DO_RABATU = 7;
+
+    private final Integer id;
+    private int MINIMALNA_ILOSC_DNI_DO_RABATU = 7;
     private LocalDateTime dataZlozenia;
     private Status status;
     private LocalDateTime ostatecznyTerminOplaceniaWCalosci;
@@ -18,9 +19,10 @@ public class Rezerwacja {
     private Auto auto;
 
 
-    public Rezerwacja(LocalDateTime dataZlozenia, Status status, LocalDateTime ostatecznyTerminOplaceniaWCalosci,
+    public Rezerwacja(Integer id, LocalDateTime dataZlozenia, Status status, LocalDateTime ostatecznyTerminOplaceniaWCalosci,
                       float pozostalaKwotaDoOplacenia, LocalDateTime dataRozpoczecia, LocalDateTime dataZakonczenia,
                       float calokowitaWartoscRezerwacji, Auto auto) {
+        this.id = id;
 
         this.dataZlozenia = dataZlozenia;
         this.status = status;

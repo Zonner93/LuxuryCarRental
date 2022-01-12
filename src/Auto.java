@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 @Getter @Setter
 public abstract class Auto {
+    private final Integer id;
     private float cenaZaDobe = 0.0f;
     private ArrayList<LocalDateTime> terminyRezerwacji;
     private Marka marka;
@@ -16,9 +17,10 @@ public abstract class Auto {
     private ArrayList<BufferedImage> zdjecia;
     private boolean czyUszkodzone = false;
     private String numerRejestracyjny;
-    private ArrayList<Rezerwacja> historiaRezerwacji;
+    private HashMap<Integer, Rezerwacja> historiaRezerwacji;
 
-    public Auto(Marka marka, String model, HashMap<String, String> daneTeczniczne) {
+    public Auto(Integer id, Marka marka, String model, HashMap<String, String> daneTeczniczne) {
+        this.id = id;
         this.marka = marka;
         this.model = model;
         this.daneTeczhniczne = daneTeczniczne;
@@ -34,6 +36,8 @@ public abstract class Auto {
     public void wyswietlFormularzDoKiedyAutoNiedostepne() {}
 //    public Auto znajdAuto(String numerRejestracyjny) {}
 //    public boolean czyAutoUszkodzone() {}
-    public void dodajRezerwacjeDoHistorii(Rezerwacja rezerwacja) {}
+    public void dodajRezerwacjeDoHistorii(Rezerwacja rezerwacja) {
+        historiaRezerwacji.put(rezerwacja.getId(), rezerwacja);
+    }
 
 }

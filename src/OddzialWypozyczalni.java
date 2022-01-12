@@ -3,6 +3,7 @@ import lombok.Setter;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @Getter @Setter
 public class OddzialWypozyczalni {
@@ -13,8 +14,8 @@ public class OddzialWypozyczalni {
     private String email;
     private LocalTime godzinaOtwarcia;
     private LocalTime godzinaZamkniecia;
-    private ArrayList<PracownikOddzialu> listaPracownikow;
-    private ArrayList<Auto> listaAut;
+    private HashMap<Integer, PracownikOddzialu> listaPracownikow;
+    private HashMap<Integer, Auto> listaAut;
 
 
     public OddzialWypozyczalni(Integer id, String nazwa, String adres, String numerTelefonu, String email,
@@ -29,6 +30,12 @@ public class OddzialWypozyczalni {
     }
 
     public void wyswietlInformacjeOOddziale() {}
-    public void dodajPracownika(PracownikOddzialu pracownikOddzialu) {}
-    public void dodajAuto(Auto auto) {}
+
+    public void dodajPracownika(PracownikOddzialu pracownikOddzialu) {
+        listaPracownikow.put(pracownikOddzialu.getId(), pracownikOddzialu);
+    }
+
+    public void dodajAuto(Auto auto) {
+        listaAut.put(auto.getId(), auto);
+    }
 }
