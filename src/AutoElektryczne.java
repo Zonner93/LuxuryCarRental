@@ -1,16 +1,11 @@
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.HashMap;
 
-@Getter @Setter
-public class AutoElektryczne extends Auto{
+public class AutoElektryczne extends Auto implements IElektryczne{
     private String maxKmNaJednymLadowaniu;
 
-    public AutoElektryczne(Integer id, Marka marka, String model, HashMap<String, String> daneTeczniczne,
-                           String maxKmNaJednymLadowaniu) {
-
-        super(id, marka, model, daneTeczniczne);
+    public AutoElektryczne(long cenaZaDobe, Marka marka, String model, OddzialWypozyczalni oddzialWypozyczalni, String maxKmNaJednymLadowaniu) {
+        super(cenaZaDobe, marka, model, oddzialWypozyczalni);
         this.maxKmNaJednymLadowaniu = maxKmNaJednymLadowaniu;
     }
 
@@ -18,5 +13,10 @@ public class AutoElektryczne extends Auto{
     public void wyswietlSzczegoloweInformacje() {
         super.wyswietlSzczegoloweInformacje();
 //        ...
+    }
+
+    @Override
+    public void laduj() {
+
     }
 }

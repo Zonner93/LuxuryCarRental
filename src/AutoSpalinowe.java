@@ -1,20 +1,17 @@
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.HashMap;
 
-@Getter @Setter
-public class AutoSpalinowe extends Auto{
+public class AutoSpalinowe extends Auto implements ISpalinowe{
     private String srednieSpalanie;
     private String pojemnoscBaku;
     private String pojemnoscSilnika;
 
-    public AutoSpalinowe(Integer id, Marka marka, String model, HashMap<String, String> daneTeczniczne,
+    public AutoSpalinowe(long cenaZaDobe, Marka marka, String model, OddzialWypozyczalni oddzialWypozyczalni,
                          String srednieSpalanie, String pojemnoscBaku, String pojemnoscSilnika) {
-        super(id, marka, model, daneTeczniczne);
+        super(cenaZaDobe, marka, model, oddzialWypozyczalni);
         this.srednieSpalanie = srednieSpalanie;
-        this. pojemnoscBaku = pojemnoscBaku;
-        this. pojemnoscSilnika = pojemnoscSilnika;
+        this.pojemnoscBaku = pojemnoscBaku;
+        this.pojemnoscSilnika = pojemnoscSilnika;
     }
 
     @Override
@@ -22,4 +19,7 @@ public class AutoSpalinowe extends Auto{
         super.wyswietlSzczegoloweInformacje();
 //        ...
     }
+
+    @Override
+    public void tankuj() {}
 }
