@@ -1,16 +1,12 @@
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 
-@Getter @Setter
-public class PracownikOddzialu extends Osoba {
-    private ArrayList<Rezerwacja> przydzieloneRezerwacje;
+public class PracownikOddzialu {
+    private ArrayList<Realizacja> przydzieloneRealizacje;
 
-    public PracownikOddzialu(Integer id, String login, String haslo, String imie, String nazwisko, String numerTelefonu,
-                             String email, ArrayList<Rezerwacja> przydzieloneRezerwacje) {
+    public void przydzielRealizacje(Realizacja realizacja) {
+        przydzieloneRealizacje.add(realizacja);
 
-        super(id, login, haslo, imie, nazwisko, numerTelefonu, email);
-        this.przydzieloneRezerwacje = przydzieloneRezerwacje;
     }
+
 }

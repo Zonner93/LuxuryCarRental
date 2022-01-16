@@ -1,14 +1,15 @@
-import lombok.Getter;
-import lombok.Setter;
+
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.time.temporal.ChronoUnit;
+import java.util.Set;
 
-@Getter @Setter
 public class Rezerwacja {
-    public int MINIMALNA_ILOSC_DNI_DO_RABATU = 7;
-    private LocalDateTime dataZlozenia;
-    private Status status;
+
+    private int MINIMALNA_ILOSC_DNI_DO_RABATU = 7;
+    private LocalDateTime dataZlozenia = LocalDateTime.now();
+    private float RABAT_PROCENT = 0.15f;
+    private Status status = Status.zlozona;
     private LocalDateTime ostatecznyTerminOplaceniaWCalosci;
     private float pozostalaKwotaDoOplacenia;
     private LocalDateTime dataRozpoczecia;
@@ -16,28 +17,36 @@ public class Rezerwacja {
     private float calokowitaWartoscRezerwacji;
     private PracownikOddzialu pracownikOddzialu;
     private Auto auto;
+    private static Set<Rezerwacja> listaRezerwacji;
 
 
-    public Rezerwacja(LocalDateTime dataZlozenia, Status status, LocalDateTime ostatecznyTerminOplaceniaWCalosci,
-                      float pozostalaKwotaDoOplacenia, LocalDateTime dataRozpoczecia, LocalDateTime dataZakonczenia,
-                      float calokowitaWartoscRezerwacji, Auto auto) {
-
-        this.dataZlozenia = dataZlozenia;
-        this.status = status;
-        this.ostatecznyTerminOplaceniaWCalosci = ostatecznyTerminOplaceniaWCalosci;
-        this.pozostalaKwotaDoOplacenia = pozostalaKwotaDoOplacenia;
+    public Rezerwacja(LocalDateTime dataRozpoczecia, LocalDateTime dataZakonczenia, PracownikOddzialu pracownikOddzialu, Auto auto) {
         this.dataRozpoczecia = dataRozpoczecia;
         this.dataZakonczenia = dataZakonczenia;
-        this.calokowitaWartoscRezerwacji = calokowitaWartoscRezerwacji;
+        this.pracownikOddzialu = pracownikOddzialu;
         this.auto = auto;
     }
 
-    public void zlozRezerwacje() {}
+    public static void zlozRezerwacje() {}
 //    public boolean sprawdzDostepnoscAuta(Auto auto) {}
-    public void przyznajRabat() {}
-//    public float obliczKosztRezerwacji() {}
+
+    public float obliczIleDniDoRezerwacji() {
+        return ChronoUnit.DAYS.between(dataRozpoczecia, dataZlozenia);
+    }
+
+    public boolean przyznajRabat() {
+        return obliczIleDniDoRezerwacji() > MINIMALNA_ILOSC_DNI_DO_RABATU;
+    }
+    public float obliczCalkowityKosztRezerwacji() {
+        calokowitaWartoscRezerwacji = obliczIleDniDoRezerwacji() * auto.getCenaZaDobe();
+        if(przyznajRabat()){
+            calokowitaWartoscRezerwacji = calokowitaWartoscRezerwacji * (1.0f - RABAT_PROCENT);
+        }
+        return calokowitaWartoscRezerwacji;
+    }
     public void oplacCalosc() {}
-    public void anulujRezerwacje() {}
+    public void anulujRezerwacje(Rezerwacja rezerwacja) {}
+    public static void anulujRezerwacje(Set<Rezerwacja> rezerwacjeDoAnulowania){}
     public void przydzielDoRealizacji(PracownikOddzialu pracownikOddzialu) {}
     public void wyswietlInformacjeORezerwacji() {}
     public void zmianaStatusuRezerwacji() {}
@@ -55,5 +64,13 @@ public class Rezerwacja {
     public void zwrotAuta(Auto auto) {}
 //    public void anulujRezerwacje() {}
     public void informujOPomyslnieZakonczonejRezerwacji() {}
+
+    public int getMINIMALNA_ILOSC_DNI_DO_RABATU() {
+        return MINIMALNA_ILOSC_DNI_DO_RABATU;
+    }
+
+    public LocalDateTime getDataZlozenia() {
+        return dataZlozenia;
+    }
 }
 

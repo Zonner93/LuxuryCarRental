@@ -1,14 +1,11 @@
-import lombok.Getter;
-import lombok.Setter;
 
 import java.awt.image.BufferedImage;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@Getter @Setter
 public abstract class Auto {
-    private float cenaZaDobe = 0.0f;
+    private float cenaZaDobe;
     private ArrayList<LocalDateTime> terminyRezerwacji;
     private Marka marka;
     private String model;
@@ -16,15 +13,18 @@ public abstract class Auto {
     private ArrayList<BufferedImage> zdjecia;
     private boolean czyUszkodzone = false;
     private String numerRejestracyjny;
-    private ArrayList<Rezerwacja> historiaRezerwacji;
+    private ArrayList<Rezerwacja> historiaRezerwacji = new ArrayList<>();
+    private OddzialWypozyczalni oddzialWypozyczalni;
 
-    public Auto(Marka marka, String model, HashMap<String, String> daneTeczniczne) {
+    public Auto(long cenaZaDobe, Marka marka, String model, OddzialWypozyczalni oddzialWypozyczalni) {
+        this.cenaZaDobe = cenaZaDobe;
         this.marka = marka;
         this.model = model;
-        this.daneTeczhniczne = daneTeczniczne;
+        this.oddzialWypozyczalni = oddzialWypozyczalni;
+        oddzialWypozyczalni.dodajAuto(this);
     }
 
-
+    public void aktualizujDane() {}
     public void dodajAuto() {}
     public void usunAuto() {}
     public void wyswietlOferte() {}
@@ -34,6 +34,14 @@ public abstract class Auto {
     public void wyswietlFormularzDoKiedyAutoNiedostepne() {}
 //    public Auto znajdAuto(String numerRejestracyjny) {}
 //    public boolean czyAutoUszkodzone() {}
-    public void dodajRezerwacjeDoHistorii(Rezerwacja rezerwacja) {}
+//    public void dodajRezerwacjeDoHistorii(Rezerwacja rezerwacja) {
 
+
+    public void setCzyUszkodzone(boolean czyUszkodzone) {
+        this.czyUszkodzone = czyUszkodzone;
+    }
+
+    public float getCenaZaDobe() {
+        return cenaZaDobe;
+    }
 }
