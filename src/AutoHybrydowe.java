@@ -2,7 +2,8 @@
 public class AutoHybrydowe extends Auto implements ISpalinowe, IElektryczne {
 
 
-    public AutoHybrydowe(long cenaZaDobe, Marka marka, String model, OddzialWypozyczalni oddzialWypozyczalni) {
+    public AutoHybrydowe(long cenaZaDobe, Marka marka, String model,
+                         OddzialWypozyczalni oddzialWypozyczalni) {
         super(cenaZaDobe, marka, model, oddzialWypozyczalni);
     }
 
