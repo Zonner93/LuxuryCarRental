@@ -12,7 +12,7 @@ public class OddzialWypozyczalni {
     private String email;
     private LocalTime godzinaOtwarcia;
     private LocalTime godzinaZamkniecia;
-    private static Set<Osoba> listaOsob;
+    private static ArrayList<Osoba> listaOsob = new ArrayList<>();
     private static ArrayList<Auto> listaAut = new ArrayList<>();
 
     public OddzialWypozyczalni(String nazwa, String adres, String numerTelefonu, String email) {
