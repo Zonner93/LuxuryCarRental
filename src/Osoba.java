@@ -27,7 +27,8 @@ public class Osoba {
         oddzialWypozyczalni.dodadjOsobe(this);
     }
 
-    public Osoba(String login, String hashHasla, String imie, String nazwisko, OddzialWypozyczalni oddzialWypozyczalni, String numerTelefonu,
+    public Osoba(String login, String hashHasla, String imie, String nazwisko, 
+                 OddzialWypozyczalni oddzialWypozyczalni, String numerTelefonu,
                  String email, Klient rolaKlient) {
 
         this.login = login;
