@@ -2,6 +2,7 @@
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Set;
 
 public class Rezerwacja {
@@ -34,11 +35,15 @@ public class Rezerwacja {
         return ChronoUnit.DAYS.between(dataRozpoczecia, dataZlozenia);
     }
 
+    public float ileDniTrwaRezerwacja() {
+        return ChronoUnit.DAYS.between(dataZakonczenia, dataRozpoczecia);
+    }
+
     public boolean przyznajRabat() {
-        return obliczIleDniDoRezerwacji() > MINIMALNA_ILOSC_DNI_DO_RABATU;
+        return ileDniTrwaRezerwacja() > MINIMALNA_ILOSC_DNI_DO_RABATU;
     }
     public float obliczCalkowityKosztRezerwacji() {
-        calokowitaWartoscRezerwacji = obliczIleDniDoRezerwacji() * auto.getCenaZaDobe();
+        calokowitaWartoscRezerwacji = ileDniTrwaRezerwacja() * auto.getCenaZaDobe();
         if(przyznajRabat()){
             calokowitaWartoscRezerwacji = calokowitaWartoscRezerwacji * (1.0f - RABAT_PROCENT);
         }
@@ -50,7 +55,7 @@ public class Rezerwacja {
     public void przydzielDoRealizacji(PracownikOddzialu pracownikOddzialu) {}
     public void wyswietlInformacjeORezerwacji() {}
     public void zmianaStatusuRezerwacji() {}
-//    public ArrayList<Auto> utworzListeWypozyczonychAut() {}
+//    public static ArrayList<Auto> utworzListeWypozyczonychAut() {}
 //    public ArrayList<Auto> utworzListeWyporzyczonychAut() {}
     public void anulujNieoplaconeRezerwacje() {}
     public void wyswietlFormularzRezerwacji() {}
