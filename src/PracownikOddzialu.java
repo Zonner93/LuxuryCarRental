@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class PracownikOddzialu {
@@ -6,7 +5,5 @@ public class PracownikOddzialu {
 
     public void przydzielRealizacje(Realizacja realizacja) {
         przydzieloneRealizacje.add(realizacja);
-
     }
-
 }
