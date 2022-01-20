@@ -14,7 +14,8 @@ public class Osoba {
     private static Set<Osoba> listaKlientow;
     private static Set<Osoba> listaPracownikow;
 
-    public Osoba(String login, String hashHasla, String imie, String nazwisko, OddzialWypozyczalni oddzialWypozyczalni, String numerTelefonu,
+    public Osoba(String login, String hashHasla, String imie, String nazwisko,
+                 OddzialWypozyczalni oddzialWypozyczalni, String numerTelefonu,
                  String email, PracownikOddzialu rolaPracownikOddzialu) {
         this.login = login;
         this.hashHasla = hashHasla;
@@ -42,7 +43,8 @@ public class Osoba {
         oddzialWypozyczalni.dodadjOsobe(this);
     }
 
-    public Osoba(String login, String hashHasla, String imie, String nazwisko, OddzialWypozyczalni oddzialWypozyczalni, String numerTelefonu,
+    public Osoba(String login, String hashHasla, String imie, String nazwisko,
+                 OddzialWypozyczalni oddzialWypozyczalni, String numerTelefonu,
                  String email, Klient rolaKlient, PracownikOddzialu rolaPracownikOddzialu) {
         this.login = login;
         this.hashHasla = hashHasla;
