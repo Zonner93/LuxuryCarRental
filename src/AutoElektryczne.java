@@ -4,7 +4,8 @@ import java.util.HashMap;
 public class AutoElektryczne extends Auto implements IElektryczne{
     private String maxKmNaJednymLadowaniu;
 
-    public AutoElektryczne(long cenaZaDobe, Marka marka, String model, OddzialWypozyczalni oddzialWypozyczalni, String maxKmNaJednymLadowaniu) {
+    public AutoElektryczne(long cenaZaDobe, Marka marka, String model, OddzialWypozyczalni oddzialWypozyczalni,
+                           String maxKmNaJednymLadowaniu) {
         super(cenaZaDobe, marka, model, oddzialWypozyczalni);
         this.maxKmNaJednymLadowaniu = maxKmNaJednymLadowaniu;
     }
